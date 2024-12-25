@@ -1,0 +1,44 @@
+﻿@inject IJSRuntime JSRuntime
+<div style="max-width: 400px; margin: auto; padding: 24px; display: flex; flex-direction: column; gap: 24px;">
+    <IgbButton @onclick="ShowSelectedCount">Show Selected Items</IgbButton>
+
+    <IgbCombo @ref="combo"
+              Data="_data"
+              DisplayKey="@nameof(Person.Name)"
+              SingleSelect="false"
+              ValueKey="@nameof(Person.Id)"
+              @bind-Value="_selectedPerson">
+    </IgbCombo>
+</div>
+
+@code {
+    private IgbCombo<object>? combo;
+    private object[]? _selectedPerson;
+
+    // 初期化時に選択されたアイテムを設定します
+    protected override void OnInitialized()
+    {
+        _selectedPerson = _data.Select(p => (object)p.Id).ToArray();
+    }
+
+    private async Task ShowSelectedCount()
+    {
+        if (_selectedPerson?.Any() == true)
+        {       
+            var selectedIds = string.Join(", ", _selectedPerson);
+            await JSRuntime.InvokeVoidAsync("alert", $"選択されたアイテムのID: {selectedIds}");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "選択されたアイテムはありません。");
+        }
+    }
+
+    private record Person(int Id, string Name);
+    private readonly IEnumerable<Person> _data = new Person[]
+    {
+        new(1, "Taro"),
+        new(2, "Hanako"),
+        new(3, "Jiro" ),
+    };
+}

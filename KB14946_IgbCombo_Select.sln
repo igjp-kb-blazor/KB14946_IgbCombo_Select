@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KB14946_IgbCombo_Select", "KB14946_IgbCombo_Select.csproj", "{27742130-D920-4A58-B4C5-99B83E22FC14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27742130-D920-4A58-B4C5-99B83E22FC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27742130-D920-4A58-B4C5-99B83E22FC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27742130-D920-4A58-B4C5-99B83E22FC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27742130-D920-4A58-B4C5-99B83E22FC14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
